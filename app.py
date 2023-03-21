@@ -5,7 +5,7 @@ from io import BytesIO
 from docx import Document
 
 app = Flask(__name__)
-openai.api_key = "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"
+openai.api_key = ""
 
 @app.route('/')
 def index():
