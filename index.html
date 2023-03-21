@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Summarizer</title>
+    <script>
+        async function submitForm(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const response = await fetch('/summarize', {
+        method: 'POST',
+        body: formData,
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        document.getElementById('summary').innerText = data.summary;
+    } else {
+        alert('Error: Unable to generate summary');
+    }
+}
+    </script>
+</head>
+<body>
+    <h1>Upload a Word Document to Summarize</h1>
+    <form onsubmit="submitForm(event)">
+        <input type="file" name="file" accept=".docx" required>
+        <label for="word_count">Word count:</label>
+        <input type="number" name="word_count" id="word_count" min="100" max="500" value="100">
+        <button type="submit">Summarize</button>
+    </form>    
+    <h2>Summary</h2>
+    <pre id="summary"></pre>
+</body>
+</html>
