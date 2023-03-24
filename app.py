@@ -12,7 +12,7 @@ nltk.download('punkt', quiet=True)
 app = Flask(__name__)
 cache = Cache(app, config={'CACHE_TYPE': 'SimpleCache'})
 
-openai.api_key = "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"
+openai.api_key = "API KEY"
 
 @app.route('/')
 def index():
