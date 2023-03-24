@@ -13,13 +13,12 @@ This project is a simple web application that allows users to upload a Word docu
 - Ensure you have Python 3.x and pip installed on your system.
 - Clone the repository or download the files.
 - Open a terminal and navigate to the project folder.
-- Run
+- Run to install the required dependencies:
  
 ```bash
-pip install -r 
+pip install -r requirements.txt 
 ```
 
-- requirements.txt to install the required dependencies.
 - Run python to start the Flask web application. 
 
 ```bash
